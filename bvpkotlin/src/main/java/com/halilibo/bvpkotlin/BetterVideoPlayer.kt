@@ -1069,7 +1069,11 @@ class BetterVideoPlayer @JvmOverloads constructor(
         // Utilities
 
         private fun log(message: String, vararg args: Any) {
-            Log.d("BetterVideoPlayer", String.format(message, *args))
+            try {
+                Log.d("BetterVideoPlayer", String.format(message, *args))
+            } catch (ignored: Exception) {
+                // Empty
+            }
         }
     }
 }
